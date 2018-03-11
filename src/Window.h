@@ -1,3 +1,8 @@
+//
+// Copyright Kenjaev Olimjon 03/12/2018
+//
+
+
 #ifndef _WINDOW_H
 #define _WINDOW_H
 
@@ -12,18 +17,18 @@ namespace cure2D {
     ~Window();
     
     void clear();
-    void update();
-    bool closed();
-    
+    void update() const;
+    bool closed() const;
+
+    GLFWwindow* getGLFWwindow();
   private:
     void setupEnvironment();
-   
+    
   private:
     std::string m_windowTitle;
     int m_width;
     int m_height;
     GLFWwindow* m_window;
-    
   };
   
 }  // namepsace cure2D;

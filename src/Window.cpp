@@ -1,3 +1,7 @@
+//
+// Copyright Kenjaev Olimjon 03/12/2018
+//
+
 #include "Window.h"
 #include <iostream>
 
@@ -16,9 +20,13 @@ namespace cure2D {
     m_window = glfwCreateWindow(m_width, m_height, m_windowTitle.c_str(), nullptr, nullptr);
     
     glfwMakeContextCurrent(m_window);
-}
-
-  bool Window::closed() {
+  }
+  
+  GLFWwindow* Window::getGLFWwindow() {
+    return m_window;
+  }
+  
+  bool Window::closed() const {
     return glfwWindowShouldClose(m_window);
   }
   
@@ -26,7 +34,7 @@ namespace cure2D {
     
   }
 
-  void Window::update() {
+  void Window::update() const {
     glfwSwapBuffers(m_window);
     glfwPollEvents();
   }
