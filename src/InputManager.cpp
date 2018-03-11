@@ -9,23 +9,33 @@ namespace cure2D {
 
   void keyboard_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
   
-  InputManager::InputManager(Window* window):quitButton(false) {
-    GLFWwindow* glfwWindow = window->getGLFWwindow();
+  InputManager::InputManager(Window* window) {
+    keys = new std::array<bool, INPUT_MANAGER_MAX_NUM_KEYS>();
+
+    for (bool &key : *keys) {
+      key = false;
+    }
     
+    GLFWwindow* glfwWindow = window->getGLFWwindow();
     glfwSetWindowUserPointer(glfwWindow, this);
     glfwSetKeyCallback(glfwWindow, keyboard_callback);
   }
+
+  InputManager::~InputManager() {
+    delete keys;
+    keys = nullptr;
+  }
   
   bool InputManager::isQuitButtonPressed() {
-    return quitButton;
+    return keys->at(GLFW_KEY_Q);
   }
 
   void keyboard_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
     InputManager* inputManager = reinterpret_cast<InputManager*>(glfwGetWindowUserPointer(window));
-    if (action == GLFW_PRESS && key == GLFW_KEY_Q) {
-      inputManager->quitButton = true;
+    if (action == GLFW_PRESS) {
+      inputManager->keys->at(key) = true;
     } else {
-      inputManager->quitButton = false;
+      inputManager->keys->at(key) = false;
     }
   }
 }
