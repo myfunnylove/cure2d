@@ -3,25 +3,16 @@
 //
 
 #include <iostream>
-#include "src/Window.h"
-#include "src/InputManager.h"
+#include "src/cure2D.h"
 
 int main(int argc, char** argv) {
 
-  cure2D::Window* window = new cure2D::Window();
-  cure2D::InputManager* inputManager = new cure2D::InputManager(window);
+  cure2D::Game* game = new cure2D::Game();
 
-  while(!window->closed() && !inputManager->isQuitButtonPressed()) {
-    window->clear();
+  game->run();
 
-    window->update();
-  }
+  delete game;
+  game = nullptr;
 
-  delete inputManager;
-  inputManager = nullptr;
-  
-  delete window;
-  window = nullptr;
-  
   return 0;
 }
