@@ -16,8 +16,11 @@ namespace cure2d {
     while(!m_window->closed() && !m_inputManager->isQuitButtonPressed()) {
       m_window->clear();
 
+      processInput();
+      
       m_window->update();
     }
+    
   }
 
   Game::~Game() {
@@ -26,6 +29,10 @@ namespace cure2d {
 
     delete m_window;
     m_window = nullptr;
+  }
+
+  void Game::processInput() {
+    //input processing
   }
   
 }  // namespace cure2D

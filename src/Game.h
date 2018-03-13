@@ -18,8 +18,11 @@ namespace cure2d {
   private:
     Window* m_window;
     InputManager* m_inputManager;
+    void processInput();
+    
   };
 
 }  // namespace cure2D
 
 #endif  // _GAME_2D_H_
+

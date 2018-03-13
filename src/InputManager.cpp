@@ -30,6 +30,10 @@ namespace cure2d {
     return keys->at(GLFW_KEY_Q);
   }
 
+  bool InputManager::isEditButtonPressed() {
+    return keys->at(GLFW_KEY_E);
+  }
+  
   void keyboard_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
     InputManager* inputManager = reinterpret_cast<InputManager*>(glfwGetWindowUserPointer(window));
     if (action == GLFW_PRESS) {

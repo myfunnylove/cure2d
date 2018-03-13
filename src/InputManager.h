@@ -20,6 +20,8 @@ namespace cure2d {
     
     // Temporary: just for quick quit. 
     bool isQuitButtonPressed();
+
+    bool isEditButtonPressed();
   private:
     friend void keyboard_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
     std::array<bool, INPUT_MANAGER_MAX_NUM_KEYS> *keys;
