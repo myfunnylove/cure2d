@@ -1,5 +1,5 @@
 //
-//  Copyright Kenjaev Olimjon 03/18/2018
+//  Copyright Olimjon Kenjaev 03/18/2018
 //
 
 #ifndef _CURE_2D_H_

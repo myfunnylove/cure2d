@@ -1,5 +1,5 @@
 //
-// Copyright Kenjaev Olimjon 03/12/2018
+// Copyright Olimjon Kenjaev 03/12/2018
 //
 
 #include "InputManager.h"
