@@ -3,11 +3,11 @@
 //
 
 #include <iostream>
-#include "src/cure2D.h"
+#include "src/cure2d.h"
 
 int main(int argc, char** argv) {
 
-  cure2D::Game* game = new cure2D::Game();
+  cure2d::Game* game = new cure2d::Game();
 
   game->run();
 

@@ -5,7 +5,7 @@
 #include "InputManager.h"
 #include <GLFW/glfw3.h>
 
-namespace cure2D {
+namespace cure2d {
 
   void keyboard_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
   

@@ -11,7 +11,7 @@
 
 #define INPUT_MANAGER_MAX_NUM_KEYS 1024
 
-namespace cure2D {
+namespace cure2d {
 
   class InputManager {
   public:

@@ -5,7 +5,7 @@
 #include "Window.h"
 #include <iostream>
 
-namespace cure2D {
+namespace cure2d {
 
   Window::Window() : m_windowTitle("cure2D"), m_width(800), m_height(600) {
     setupEnvironment();

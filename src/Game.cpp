@@ -4,7 +4,7 @@
 
 #include "Game.h"
 
-namespace cure2D {
+namespace cure2d {
 
   Game::Game():m_window(new Window), m_inputManager(new InputManager(m_window)) {}
 

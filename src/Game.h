@@ -8,7 +8,7 @@
 #include "Window.h"
 #include "InputManager.h"
 
-namespace cure2D {
+namespace cure2d {
 
   class Game {
   public:

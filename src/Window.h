@@ -9,7 +9,7 @@
 #include <GLFW/glfw3.h>
 #include <string>
 
-namespace cure2D {
+namespace cure2d {
 
   class Window {
   public:
