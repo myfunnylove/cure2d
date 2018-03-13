@@ -6,9 +6,9 @@
 #ifndef _WINDOW_H
 #define _WINDOW_H
 
-#include <GLFW/glfw3.h>
 #include <string>
 
+class GLFWwindow;
 namespace cure2d {
 
   class Window {
