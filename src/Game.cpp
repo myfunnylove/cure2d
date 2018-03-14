@@ -3,7 +3,7 @@
 //
 
 #include "Game.h"
-#include <GL/gl.h>
+#include "config.h"
 
 namespace cure2d {
 

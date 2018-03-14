@@ -14,12 +14,12 @@ namespace cure2d {
   public:
     Game();
     void run();
-    ~Game();
+    virtual ~Game();
+  protected:
+    void processInput();
   private:
     Window* m_window;
     InputManager* m_inputManager;
-    void processInput();
-    
   };
 
 }  // namespace cure2D
