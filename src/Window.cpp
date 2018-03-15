@@ -10,7 +10,7 @@
 
 namespace cure2d {
 
-  Window::Window() : m_windowTitle("cure2d"), m_width(800), m_height(600) {
+  Window::Window() : m_windowTitle("cure2d"), m_width(1280), m_height(720) {
     setupEnvironment();
   }
 
@@ -19,13 +19,16 @@ namespace cure2d {
       std::cout << "Failed to initialize glfw" << std::endl;
       return;
     }
-
+    
+    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     m_window = glfwCreateWindow(m_width, m_height, m_windowTitle.c_str(), nullptr, nullptr);
+
+    
     glfwMakeContextCurrent(m_window);
     glViewport(0, 0, m_width, m_height);
     
