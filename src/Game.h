@@ -18,8 +18,8 @@ namespace cure2d {
   protected:
     void processInput();
   private:
-    Window* m_window;
-    InputManager* m_inputManager;
+    std::unique_ptr<Window> m_window;
+    std::unique_ptr<InputManager> m_inputManager;
   };
 
 }  // namespace cure2D

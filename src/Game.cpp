@@ -23,13 +23,7 @@ namespace cure2d {
     
   }
 
-  Game::~Game() {
-    delete m_inputManager;
-    m_inputManager = nullptr;
-
-    delete m_window;
-    m_window = nullptr;
-  }
+  Game::~Game() {}
 
   void Game::processInput() {
     //input processing

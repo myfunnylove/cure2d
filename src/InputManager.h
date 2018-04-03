@@ -15,7 +15,7 @@ namespace cure2d {
 
   class InputManager {
   public:
-    explicit InputManager(Window* window);
+    explicit InputManager(std::unique_ptr<Window> &window);
     ~InputManager();
     
     // Temporary: just for quick quit. 

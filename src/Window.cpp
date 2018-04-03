@@ -10,7 +10,7 @@
 
 namespace cure2d {
 
-  Window::Window() : m_windowTitle("cure2d"), m_width(800), m_height(600) {
+  Window::Window() : m_windowTitle("cure2d"), m_width(1280), m_height(720) {
     setupEnvironment();
   }
 
@@ -44,7 +44,7 @@ namespace cure2d {
   }
   
   bool Window::closed() const {
-    return glfwWindowShouldClose(m_window);
+    return glfwWindowShouldClose(m_window) == GLFW_TRUE;
   }
   
   void Window::clear() {

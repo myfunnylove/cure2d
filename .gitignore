@@ -36,6 +36,8 @@
 *.*~
 \#*\#
 .\#*
+.idea/*
 
 # Build directory
 build/*
+cmake-build-debug/*
