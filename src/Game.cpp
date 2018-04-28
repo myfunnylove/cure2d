@@ -7,7 +7,7 @@
 
 namespace cure2d {
 
-  Game::Game():m_window(new Window), m_inputManager(new InputManager(m_window)) {}
+  Game::Game():m_window(std::make_unique<Window>()), m_inputManager(std::make_unique<InputManager>(m_window)) {}
 
   void Game::run() {
     // Temporary just to check gl
