@@ -4,6 +4,8 @@
 
 #include "Game.h"
 #include "config.h"
+#include "helper/FPSLimiter.h"
+#include <iostream>
 
 namespace cure2d {
 
@@ -18,21 +20,27 @@ namespace cure2d {
   void Game::run() {
     // Temporary just to check gl
     glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
+
+    FPSLimiter fpsLimiter(60.0f/1000.0f);
+    fpsLimiter.initialize();
     
     while(!m_window->closed() && !m_inputManager->isQuitButtonPressed()) { 
       m_window->clear();
-
+      fpsLimiter.start();
+      
       processInput();
-      update(0.1f);
+      update(fpsLimiter.getElapsedTime());
       render();
       
       m_window->update();
+
+      fpsLimiter.finish();
     }
     
   }
 
   void Game::update(float deltaTime) {
-
+    // std::cout << deltaTime << std::endl; 
   }
 
   void Game::render() {
