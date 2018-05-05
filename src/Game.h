@@ -6,25 +6,25 @@
 #define _GAME_2D_H_
 
 #include "Window.h"
-#include "InputManager.h"
-#include <chrono>
+#include "Input/KeyboardInputManager.h"
 
 namespace cure2d {
 
   class Game {
   public:
     Game();
-    Game(int framesPerSecond);
+    Game(float framesPerSecond);
     void run();
     virtual ~Game();
 
-    void setFramesPerSecond(int framePerSecond);
+    void setFramesPerSecond(float framePerSecond);
   protected:
     virtual void processInput();
-    virtual void update(std::chrono::milliseconds deltaTime);
+    virtual void update(float deltaTime);
     virtual void render();
   private:
-    int m_framesPerSecond;
+    float m_framesPerSecond;
+    
     std::unique_ptr<Window> m_window;
     std::unique_ptr<InputManager> m_inputManager;
   };

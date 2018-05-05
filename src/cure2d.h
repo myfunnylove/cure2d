@@ -7,6 +7,6 @@
 
 #include "Game.h"
 #include "Window.h"
-#include "InputManager.h"
+#include "Input/KeyboardInputManager.h"
   
 #endif  // _CURE_2D_H_
