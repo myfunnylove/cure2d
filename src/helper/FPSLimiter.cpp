@@ -25,8 +25,6 @@ namespace cure2d {
   void FPSLimiter::finish() {
     double endTime = glfwGetTime();
     double sleepTime = endTime - m_startTime + m_framesPerSecond;
-
-    std::cout << sleepTime << std::endl;
     
     usleep(sleepTime);
     

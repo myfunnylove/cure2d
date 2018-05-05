@@ -25,8 +25,8 @@ namespace cure2d {
     fpsLimiter.initialize();
     
     while(!m_window->closed() && !m_inputManager->isQuitButtonPressed()) { 
-      m_window->clear();
       fpsLimiter.start();
+      m_window->clear();
       
       processInput();
       update(fpsLimiter.getElapsedTime());
