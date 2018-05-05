@@ -4,7 +4,7 @@
 
 #include "Game.h"
 #include "config.h"
-#include "helper/FPSLimiter.h"
+#include "Helper/FPSLimiter.h"
 #include <iostream>
 
 namespace cure2d {
