@@ -5,7 +5,27 @@ SET(CMAKE_C_COMPILER "clang")
 SET(CMAKE_CXX_COMPILER "clang++")
 SET(CMAKE_CXX_STANDARD 17)
 
-add_executable(cure2d main.cpp src/config.h src/cure2d.h src/Game.h src/Game.cpp src/Input/KeyboardInputManager.h src/Input/KeyboardInputManager.cpp src/Input/InputManager.cpp src/Input/InputManager.h src/Window.h src/Window.cpp src/Helper/FPSLimiter.h src/Helper/FPSLimiter.cpp src/Node/Node.h src/Node/Node.cpp) 
+add_executable(cure2d
+  main.cpp
+  src/config.h
+  src/cure2d.h
+  src/Game.h
+  src/Game.cpp
+  src/Input/KeyboardInputManager.h
+  src/Input/KeyboardInputManager.cpp
+  src/Input/InputManager.cpp
+  src/Input/InputManager.h
+  src/Window.h
+  src/Window.cpp
+  src/Helper/FPSLimiter.h
+  src/Helper/FPSLimiter.cpp
+  src/Node/Node.h
+  src/Node/Node.cpp
+  src/Drawable/Drawable.h
+  src/Drawable/Drawable.cpp
+  src/Updateable/Updateable.h
+  src/Updateable/Updateable.cpp
+  ) 
 
 find_package(glfw3 REQUIRED)
 include_directories(${GLFW_INCLUDE_DIRS})
