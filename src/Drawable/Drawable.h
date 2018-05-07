@@ -8,10 +8,10 @@
 namespace cure2d {
 
   class Drawable {
-  private:
-    Drawable() = default;
   public:
-    virtual void draw()=0;
+    Drawable() = default;
+    virtual void draw() = 0;
+    virtual ~Drawable() = 0;
   };
   
 };  // namespace cure2d

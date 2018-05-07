@@ -9,19 +9,21 @@
 
 namespace cure2d {
 
-  Game::Game():m_window(std::make_unique<Window>()), m_inputManager(std::make_unique<KeyboardInputManager>(m_window)) {}
+  Game::Game():m_window(std::make_unique<Window>()),
+               m_inputManager(std::make_unique<KeyboardInputManager>(m_window)),
+               m_node(std::make_unique<Node>()) {}
 
-  Game::Game(float framesPerSecond):m_window(std::make_unique<Window>()), m_inputManager(std::make_unique<KeyboardInputManager>(m_window)), m_framesPerSecond(framesPerSecond) {}
+  Game::Game(float framesPerSecond):m_window(std::make_unique<Window>()),
+                                    m_inputManager(std::make_unique<KeyboardInputManager>(m_window)),
+                                    m_framesPerSecond(framesPerSecond),
+                                    m_node(std::make_unique<Node>()){}
   
   void Game::setFramesPerSecond(float framesPerSecond) {
     m_framesPerSecond = framesPerSecond;
   }
   
   void Game::run() {
-    // Temporary just to check gl
-    glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
-
-    FPSLimiter fpsLimiter(60.0f/1000.0f);
+    FPSLimiter fpsLimiter;
     fpsLimiter.initialize();
     
     while(!m_window->closed() && !m_inputManager->isQuitButtonPressed()) { 
@@ -33,18 +35,17 @@ namespace cure2d {
       render();
       
       m_window->update();
-
       fpsLimiter.finish();
     }
     
   }
 
   void Game::update(float deltaTime) {
-    // std::cout << deltaTime << std::endl; 
+    m_node->update(deltaTime);
   }
 
   void Game::render() {
-
+    m_node->draw();
   }
   
   Game::~Game() {}

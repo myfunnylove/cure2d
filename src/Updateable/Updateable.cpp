@@ -6,6 +6,6 @@
 
 namespace cure2d {
 
-  
+  Updateable::~Updateable() {}
   
 }  // namespace cure2d

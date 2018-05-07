@@ -11,28 +11,22 @@
 
 namespace cure2d {
 
-  FPSLimiter::FPSLimiter(double framesPerSecond):m_framesPerSecond(framesPerSecond) { }
+  FPSLimiter::FPSLimiter() { }
   
   void FPSLimiter::initialize() {
-    m_lastTime = glfwGetTime();
+    
   }
 
   void FPSLimiter::start() {
-    m_startTime = glfwGetTime();
-    m_elapsedTime = m_lastTime - m_startTime;
+    
   }
 
   void FPSLimiter::finish() {
-    double endTime = glfwGetTime();
-    double sleepTime = endTime - m_startTime + m_framesPerSecond;
     
-    usleep(sleepTime);
-    
-    m_lastTime = endTime;
   }
 
-  double FPSLimiter::getElapsedTime() {
-    return m_elapsedTime;
+  float FPSLimiter::getElapsedTime() {
+    return 0.0f;
   }
   
 }  // namespace cure2d

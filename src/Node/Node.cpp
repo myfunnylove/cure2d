@@ -8,37 +8,38 @@
 namespace cure2d {
 
   Node::Node() {
-    m_parent = nullptr;
+
   }
   
-  void Node::addChild(Node* node) {
-    m_children.push_back(node);
-    node->m_parent = this;
+  void Node::addChild(std::shared_ptr<Node> node) {
+    // add child logic
   }
 
-  void Node::removeChild(Node* node) {
-    assert(node->m_parent == this);
-    
-    std::vector<Node*>::iterator potentialIterator;
-    
-    for (auto it = m_children.begin(); it !=  m_children.end(); it++) {
-      if (node == *it) {
-	potentialIterator = it;
-	break;
-      }
-    }
-
-    m_children.erase(potentialIterator);
-    node->m_parent = nullptr;
+  void Node::removeChild(std::shared_ptr<Node> node) {    
+    // remove child logic
   }
   
   void Node::removeFromParent() {
-    assert(m_parent != nullptr);
-
-    m_parent->removeChild(this);
+    // remove from parent logic
   }
 
-  Node* Node::getParent() {
+  std::weak_ptr<Node> Node::getParent() {
     return m_parent;
+  }
+
+  void Node::update(float deltaTime) {
+    for (auto node : m_children) {
+      node->update(deltaTime);
+    }
+  }
+
+  void Node::draw() {
+    for (auto node : m_children) {
+      node->draw();
+    }
+  }
+
+  Node::~Node() {
+
   }
 }  // namespace cure2d

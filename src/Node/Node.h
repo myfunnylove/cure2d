@@ -7,21 +7,28 @@
 
 #include <vector>
 #include <memory>
+#include "../Updateable/Updateable.h"
+#include "../Drawable/Drawable.h"
 
 namespace cure2d {
 
-  class Node {
+  class Node : public Updateable, public Drawable {
   private:
-    Node* m_parent;
-    std::vector<Node*> m_children;
+    std::weak_ptr<Node> m_parent;
+    std::vector<std::shared_ptr<Node>> m_children;
 
-    void removeChild(Node* node);
+    void removeChild(std::shared_ptr<Node> node);
   public:
-    Node* getParent();
+    std::weak_ptr<Node> getParent();
     Node();
 
-    void addChild(Node* node);
+    void addChild(std::shared_ptr<Node> node);
     void removeFromParent();
+
+    void update(float deltaTime) override;
+    void draw() override;
+
+    ~Node() override;
   };
   
   

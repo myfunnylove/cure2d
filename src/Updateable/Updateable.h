@@ -8,10 +8,10 @@
 namespace cure2d {
 
   class Updateable {
-  private:
-    Updateable() = default;
   public:
-    virtual void update(float deltaTime)=0;
+    Updateable() = default;
+    virtual void update(float deltaTime) = 0;
+    virtual ~Updateable() = 0;
   };
   
 }  // namespace cure2d
