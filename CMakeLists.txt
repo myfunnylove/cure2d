@@ -25,6 +25,7 @@ add_executable(cure2d
   src/Drawable/Drawable.cpp
   src/Updateable/Updateable.h
   src/Updateable/Updateable.cpp
+  src/Math/vec2.h
   ) 
 
 find_package(glfw3 REQUIRED)
