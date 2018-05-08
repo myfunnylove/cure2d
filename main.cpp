@@ -4,8 +4,6 @@
 
 #include <iostream>
 #include "src/cure2d.h"
-#include "src/Math/vec2.h"
-
 
 int main(int argc, char** argv) {
 
