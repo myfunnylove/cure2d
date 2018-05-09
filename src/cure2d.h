@@ -14,6 +14,7 @@
 #include "Helper/FPSLimiter.h"
 #include "Math/vec2.h"
 #include "Math/vec3.h"
+#include "Math/vec4.h"
 #include "Node/Node.h"
 
 #endif  // _CURE_2D_H_
