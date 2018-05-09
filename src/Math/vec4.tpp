@@ -2,8 +2,6 @@
 //  Copyright Olimjon Kenjaev 05/09/2018
 //
 
-#include "vec4.h"
-
 namespace cure2d {
   namespace math {
 

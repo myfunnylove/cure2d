@@ -7,7 +7,7 @@
 
 int main(int argc, char** argv) {
 
-  cure2d::math::vec4<int> vector(1, 2, 1, 1);
+  cure2d::math::vec3<int> vector(1, 2, 1);
 
   std::cout << vector << std::endl;
   

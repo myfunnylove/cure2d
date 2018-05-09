@@ -5,7 +5,6 @@
 #ifndef _MATH_VEC_3_
 #define _MATH_VEC_3_
 
-#include "vec2.h"
 #include <iostream>
 
 namespace cure2d {
