@@ -25,11 +25,21 @@ namespace cure2d {
       vec2(const vec2<T>& other);
 
       bool operator==(const vec2<T>& other) const;
-      vec2<T> operator+(const vec2& other) const;
-      vec2<T> operator-(const vec2& other) const;
-      vec2<T> operator/(const vec2& other) const;
-      vec2<T> operator*(const vec2& other) const;
-      vec2<T> operator*(const int& scalar) const;
+
+      template <class U>
+      vec2<T> operator+(const vec2<U>& other) const;
+
+      template <class U>
+      vec2<T> operator-(const vec2<U>& other) const;
+
+      template <class U>
+      vec2<T> operator/(const vec2<U>& other) const;
+
+      template <class U>
+      vec2<T> operator*(const vec2<U>& other) const;
+
+      template <class U>
+      vec2<T> operator*(const U& scalar) const;
       
       friend std::ostream& operator<< <T>(std::ostream& ostream, const vec2<T>& other);
 

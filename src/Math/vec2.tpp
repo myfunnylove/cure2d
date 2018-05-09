@@ -31,27 +31,32 @@ namespace cure2d {
     }
 
     template <class T>
-    vec2<T> vec2<T>::operator+(const vec2& other) const {
+    template <class U>
+    vec2<T> vec2<T>::operator+(const vec2<U>& other) const {
       return vec2(x + other.x, y + other.y);
     }
 
     template <class T>
-    vec2<T> vec2<T>::operator-(const vec2& other) const {
+    template <class U>
+    vec2<T> vec2<T>::operator-(const vec2<U>& other) const {
       return vec2(x - other.x, y - other.y);
     }
 
     template <class T>
-    vec2<T> vec2<T>::operator*(const vec2& other) const {
+    template <class U>
+    vec2<T> vec2<T>::operator*(const vec2<U>& other) const {
       return vec2(x * other.x, y * other.y);
     }
 
     template <class T>
-    vec2<T> vec2<T>::operator/(const vec2& other) const {
+    template <class U>
+    vec2<T> vec2<T>::operator/(const vec2<U>& other) const {
       return vec2(x / other.x, y / other.y);
     }
 
     template <class T>
-    vec2<T> vec2<T>::operator*(const int& scalar) const {
+    template <class U>
+    vec2<T> vec2<T>::operator*(const U& scalar) const {
       return vec2(x * scalar, y * scalar);
     }
 
