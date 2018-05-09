@@ -8,22 +8,11 @@ namespace cure2d {
   namespace math {
 
     template <class T>
-    vec2<T>::vec2() {
-      x = 0.0f;
-      y = 0.0f;
-    }
+      vec2<T>::vec2(): x(0), y(0) {}
 
     template <class T>
-    vec2<T>::vec2(T x, T y) {
-      this->x = x;
-      this->y = y;
+      vec2<T>::vec2(T _x, T _y): x(_x), y(_y) {
     }
-
-    template <class T>
-    vec2<T>::vec2(const vec2<T>& other) {
-      x = other.x;
-      y = other.y;
-    } 
 
     template <class T>
     bool vec2<T>::operator==(const vec2<T>& other) const {
@@ -61,14 +50,42 @@ namespace cure2d {
     }
 
     template <class T>
+    template <class U>
+    vec2<T>& vec2<T>::operator+=(const vec2<U>& other) {
+      x += other.x;
+      y += other.y;
+      return *this;
+    }
+
+    template <class T>
+    template <class U>
+    vec2<T>& vec2<T>::operator-=(const vec2<U>& other) {
+      x -= other.x;
+      y -= other.y;
+      return *this;
+    }
+
+    template <class T>
+    template <class U>
+    vec2<T>& vec2<T>::operator*=(const vec2<U>& other) {
+      x *= other.x;
+      y *= other.y;
+      return *this;
+    }
+
+    template <class T>
+    template <class U>
+    vec2<T>& vec2<T>::operator/=(const vec2<U>& other) {
+      x /= other.x;
+      y /= other.y;
+      return *this;
+    }
+    
+    template <class T>
     std::ostream& operator<<(std::ostream& ostream, const vec2<T>& other) {
       ostream << "(" << other.x << "," << other.y << ")";
       return ostream;
-     }
+    }
 
-    template class vec2<int>;
-    template class vec2<double>;
-    template class vec2<float>;
-    template class vec2<short>;
   }  // namespace math
 }  // namespace cure2d

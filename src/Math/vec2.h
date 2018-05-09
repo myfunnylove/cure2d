@@ -13,35 +13,46 @@ namespace cure2d {
     template <class T> struct vec2;
     template <class T>
     std::ostream& operator<<(std::ostream& ostream, const vec2<T>& other);
-
+      
     template <class T>
     struct vec2 {
-     
+   
       T x;
       T y;
-
+        
       vec2();
       vec2(T x, T y);
-      vec2(const vec2<T>& other);
-
+        
       bool operator==(const vec2<T>& other) const;
-
+        
       template <class U>
       vec2<T> operator+(const vec2<U>& other) const;
-
+        
       template <class U>
       vec2<T> operator-(const vec2<U>& other) const;
 
       template <class U>
       vec2<T> operator/(const vec2<U>& other) const;
-
+        
       template <class U>
       vec2<T> operator*(const vec2<U>& other) const;
 
       template <class U>
-      vec2<T> operator*(const U& scalar) const;
+      vec2<T>& operator+=(const vec2<U>& other);
+
+      template <class U>
+      vec2<T>& operator-=(const vec2<U>& other);
+
+      template <class U>
+      vec2<T>& operator*=(const vec2<U>& other);
+
+      template <class U>
+      vec2<T>& operator/=(const vec2<U>& other);
       
-      friend std::ostream& operator<< <T>(std::ostream& ostream, const vec2<T>& other);
+      template <class U>
+      vec2<T> operator*(const U& scalar) const;
+        
+      friend std::ostream& operator<< <>(std::ostream& ostream, const vec2<T>& other);
 
     };
   }  // namespace math
