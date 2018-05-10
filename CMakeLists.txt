@@ -28,6 +28,8 @@ add_executable(cure2d
   src/Math/vec2.h
   src/Math/vec3.h
   src/Math/vec4.h
+  src/Math/mat4.h
+  src/Math/mat4.cpp
   ) 
 
 find_package(glfw3 REQUIRED)
