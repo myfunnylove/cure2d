@@ -17,7 +17,7 @@ namespace cure2d {
 
   class KeyboardInputManager : public InputManager {
   public:
-    explicit KeyboardInputManager(std::unique_ptr<Window> &window);
+    explicit KeyboardInputManager(Window* window);
     ~KeyboardInputManager();
 
     // Temporary: just for quick quit. 

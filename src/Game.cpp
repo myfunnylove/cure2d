@@ -9,14 +9,14 @@
 
 namespace cure2d {
 
-  Game::Game():m_window(std::make_unique<Window>()),
-               m_inputManager(std::make_unique<KeyboardInputManager>(m_window)),
-               m_node(std::make_unique<Node>()) {}
+  Game::Game():m_window(new Window()),
+               m_inputManager(new KeyboardInputManager(m_window)),
+               m_node(new Node()) {}
 
-  Game::Game(float framesPerSecond):m_window(std::make_unique<Window>()),
-                                    m_inputManager(std::make_unique<KeyboardInputManager>(m_window)),
+  Game::Game(float framesPerSecond):m_window(new Window()),
+                                    m_inputManager(new KeyboardInputManager(m_window)),
                                     m_framesPerSecond(framesPerSecond),
-                                    m_node(std::make_unique<Node>()){}
+                                    m_node(new Node()){}
   
   void Game::setFramesPerSecond(float framesPerSecond) {
     m_framesPerSecond = framesPerSecond;
@@ -48,7 +48,11 @@ namespace cure2d {
     m_node->draw();
   }
   
-  Game::~Game() {}
+  Game::~Game() {
+    delete m_node;
+    delete m_inputManager;
+    delete m_window;
+  }
 
   void Game::processInput() {
     //input processing

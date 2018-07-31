@@ -9,7 +9,7 @@ namespace cure2d {
 
   void keyboard_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
   
-  KeyboardInputManager::KeyboardInputManager(std::unique_ptr<Window> &window) {
+  KeyboardInputManager::KeyboardInputManager(Window* window) {
     keys = new std::array<bool, INPUT_MANAGER_MAX_NUM_KEYS>();
 
     for (bool &key : *keys) {

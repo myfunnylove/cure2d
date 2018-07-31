@@ -25,11 +25,9 @@ namespace cure2d {
     virtual void render();
   private:
     float m_framesPerSecond;
-    std::unique_ptr<Node> m_node;
-    
-    
-    std::unique_ptr<Window> m_window;
-    std::unique_ptr<InputManager> m_inputManager;
+    Node* m_node;
+    Window* m_window;
+    InputManager* m_inputManager;
   };
 
 }  // namespace cure2D

@@ -14,15 +14,15 @@ namespace cure2d {
 
   class Node : public Updateable, public Drawable {
   private:
-    std::weak_ptr<Node> m_parent;
-    std::vector<std::shared_ptr<Node>> m_children;
+    Node* m_parent;
+    std::vector<Node*> m_children;
 
-    void removeChild(std::shared_ptr<Node> node);
+    void removeChild(Node* node);
   public:
-    std::weak_ptr<Node> getParent();
+    Node* getParent();
     Node();
 
-    void addChild(std::shared_ptr<Node> node);
+    void addChild(Node* node);
     void removeFromParent();
 
     void update(float deltaTime) override;

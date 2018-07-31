@@ -6,7 +6,11 @@
 #include "src/cure2d.h"
 
 int main(int argc, char** argv) {
-  std::unique_ptr<cure2d::Game> game = std::make_unique<cure2d::Game>(60); 
+  cure2d::Game* game = new cure2d::Game(60);
   game->run();
+
+  delete game;
+  game = nullptr;
+  
   return 0;
 }

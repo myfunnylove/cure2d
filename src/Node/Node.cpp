@@ -11,11 +11,11 @@ namespace cure2d {
 
   }
   
-  void Node::addChild(std::shared_ptr<Node> node) {
+  void Node::addChild(Node* node) {
     // add child logic
   }
 
-  void Node::removeChild(std::shared_ptr<Node> node) {    
+  void Node::removeChild(Node* node) {    
     // remove child logic
   }
   
@@ -23,7 +23,7 @@ namespace cure2d {
     // remove from parent logic
   }
 
-  std::weak_ptr<Node> Node::getParent() {
+  Node* Node::getParent() {
     return m_parent;
   }
 
