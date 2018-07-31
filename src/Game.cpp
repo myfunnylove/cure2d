@@ -13,15 +13,6 @@ namespace cure2d {
                m_inputManager(new KeyboardInputManager(m_window)),
                m_node(new Node()) {}
 
-  Game::Game(float framesPerSecond):m_window(new Window()),
-                                    m_inputManager(new KeyboardInputManager(m_window)),
-                                    m_framesPerSecond(framesPerSecond),
-                                    m_node(new Node()){}
-  
-  void Game::setFramesPerSecond(float framesPerSecond) {
-    m_framesPerSecond = framesPerSecond;
-  }
-  
   void Game::run() {
     FPSLimiter fpsLimiter;
     fpsLimiter.initialize();

@@ -4,6 +4,7 @@
 
 #include "Node.h"
 #include <cassert>
+#include <algorithm>
 
 namespace cure2d {
 
@@ -12,17 +13,24 @@ namespace cure2d {
   }
   
   void Node::addChild(Node* node) {
-    // add child logic
+    assert(!isExistsInHierarchy());
+    m_children.push_back(node);
   }
 
   void Node::removeChild(Node* node) {    
-    // remove child logic
+    assert(!isExistsInHierarchy());
+    m_children.erase(std::remove(m_children.begin(), m_children.end(), node), m_children.end());
   }
   
   void Node::removeFromParent() {
-    // remove from parent logic
+    m_parent->removeChild(this);
   }
 
+  bool Node::isExistsInHierarchy() {
+    // TODO: Add the logic here;
+    return false;
+  }
+  
   Node* Node::getParent() {
     return m_parent;
   }

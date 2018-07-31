@@ -18,6 +18,8 @@ namespace cure2d {
     std::vector<Node*> m_children;
 
     void removeChild(Node* node);
+    bool isExistsInHierarchy();
+
   public:
     Node* getParent();
     Node();

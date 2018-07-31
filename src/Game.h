@@ -14,7 +14,6 @@ namespace cure2d {
   class Game {
   public:
     Game();
-    Game(float framesPerSecond);
     void run();
     virtual ~Game();
 
@@ -24,7 +23,6 @@ namespace cure2d {
     virtual void update(float deltaTime);
     virtual void render();
   private:
-    float m_framesPerSecond;
     Node* m_node;
     Window* m_window;
     InputManager* m_inputManager;
