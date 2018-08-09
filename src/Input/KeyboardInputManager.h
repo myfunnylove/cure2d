@@ -31,7 +31,7 @@ namespace cure2d {
     bool isEditButtonPressed() override;
   private:
     friend void keyboard_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
-    std::array<bool, INPUT_MANAGER_MAX_NUM_KEYS> *keys;
+    std::array<bool, INPUT_MANAGER_MAX_NUM_KEYS> keys{false};
   };
 
 }  // namespace cure2D
