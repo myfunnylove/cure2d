@@ -20,11 +20,11 @@ namespace cure2d {
   }
   
   bool KeyboardInputManager::isQuitButtonPressed() {
-    return keys.at(GLFW_KEY_Q);
+    return keys[GLFW_KEY_Q];
   }
 
   bool KeyboardInputManager::isEditButtonPressed() {
-    return keys.at(GLFW_KEY_E);
+    return keys[GLFW_KEY_E];
   }
   
   bool KeyboardInputManager::isUpButtonPressed() {

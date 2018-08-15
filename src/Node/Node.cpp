@@ -9,7 +9,7 @@
 namespace cure2d {
 
   Node::Node() {
-
+    m_parent = nullptr;
   }
   
   void Node::addChild(Node* node) {
@@ -27,8 +27,7 @@ namespace cure2d {
   }
 
   bool Node::isExistsInHierarchy() {
-    // TODO: Add the logic here;
-    return false;
+    return m_parent != nullptr;
   }
   
   Node* Node::getParent() {
@@ -50,4 +49,5 @@ namespace cure2d {
   Node::~Node() {
 
   }
+  
 }  // namespace cure2d
