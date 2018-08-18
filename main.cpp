@@ -7,8 +7,12 @@
 
 int main(int argc, char** argv) {
   cure2d::Game* game = new cure2d::Game();
-  game->run();
 
+  cure2d::Node* main_node = new cure2d::Node();
+  main_node->addChild(node);
+  
+  game->run();
+  
   delete game;
   game = nullptr;
   

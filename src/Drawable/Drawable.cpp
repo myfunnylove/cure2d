@@ -5,7 +5,6 @@
 #include "Drawable.h"
 
 namespace cure2d {
-
   Drawable::~Drawable() {}
   
 }  // namespace cure2d

@@ -5,7 +5,6 @@
 #include "Updateable.h"
 
 namespace cure2d {
-
-  Updateable::~Updateable() {}
+  Updateable::~Updateable(){}
   
 }  // namespace cure2d

@@ -13,36 +13,34 @@ namespace cure2d {
   }
   
   void Node::addChild(Node* node) {
-    assert(!isExistsInHierarchy());
+    assert(node != this && "A node cannot add as a child itself");
+    assert(node->getParent() == nullptr && "The node is already in hierarchy");
     m_children.push_back(node);
+    node->m_parent = this;
   }
 
   void Node::removeChild(Node* node) {    
-    assert(!isExistsInHierarchy());
     m_children.erase(std::remove(m_children.begin(), m_children.end(), node), m_children.end());
+    node->m_parent = nullptr;
   }
   
   void Node::removeFromParent() {
     m_parent->removeChild(this);
   }
 
-  bool Node::isExistsInHierarchy() {
-    return m_parent != nullptr;
-  }
-  
-  Node* Node::getParent() {
+  Node* Node::getParent() const {
     return m_parent;
   }
 
   void Node::update(float deltaTime) {
-    for (auto node : m_children) {
-      node->update(deltaTime);
+    for (const auto &updatable : m_children) {
+      updatable->update(deltaTime);
     }
   }
 
   void Node::draw() {
-    for (auto node : m_children) {
-      node->draw();
+    for (const auto &drawable : m_children) {
+      drawable->draw();
     }
   }
 

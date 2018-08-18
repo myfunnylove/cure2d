@@ -13,6 +13,10 @@ namespace cure2d {
                m_inputManager(new KeyboardInputManager(m_window)),
                m_node(new Node()) {}
 
+  void Game::setMainNode(Node* node) {
+    m_node = node;
+  }
+  
   void Game::run() {
     FPSLimiter fpsLimiter;
     fpsLimiter.initialize();
@@ -41,8 +45,13 @@ namespace cure2d {
   
   Game::~Game() {
     delete m_node;
+    m_node = nullptr;
+    
     delete m_inputManager;
+    m_inputManager = nullptr;
+    
     delete m_window;
+    m_window = nullptr;
   }
 
   void Game::processInput() {

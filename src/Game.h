@@ -16,7 +16,8 @@ namespace cure2d {
     Game();
     void run();
     virtual ~Game();
-
+    void setMainNode(Node* node);
+    
     void setFramesPerSecond(float framePerSecond);
   protected:
     virtual void processInput();
