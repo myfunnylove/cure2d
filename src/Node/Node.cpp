@@ -7,7 +7,7 @@
 #include <algorithm>
 
 namespace cure2d {
-
+  
   Node::Node() {
     m_parent = nullptr;
   }
@@ -44,8 +44,6 @@ namespace cure2d {
     }
   }
 
-  Node::~Node() {
-
-  }
+  Node::~Node() {}
   
 }  // namespace cure2d
