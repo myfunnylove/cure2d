@@ -22,13 +22,17 @@ namespace cure2d {
   public:
     Node* getParent() const;
     Node();
+    Node(const Node& node);
 
+    Node& operator=(const Node& node);
+    
     void addChild(Node* node);
     void removeFromParent();
 
     void draw() override;
     void update(float deltaTime) override;
 
+    
     ~Node() override;
   };
   

@@ -9,8 +9,8 @@ int main(int argc, char** argv) {
   cure2d::Game* game = new cure2d::Game();
 
   cure2d::Node* main_node = new cure2d::Node();
-  main_node->addChild(node);
-  
+  game->setMainNode(main_node);
+
   game->run();
   
   delete game;

@@ -5,11 +5,44 @@
 #include "Node.h"
 #include <cassert>
 #include <algorithm>
+#include <iostream>
 
 namespace cure2d {
   
   Node::Node() {
     m_parent = nullptr;
+  }
+
+  Node::Node(const Node& node) : m_parent(node.m_parent) {
+    std::cout << "Calling copy constructor" << std::endl;
+    for (auto child : node.m_children) {
+      auto localNode = new Node(*child);
+      addChild(localNode);
+    }
+
+    if (m_parent) {
+      m_parent->addChild(this);
+    }
+  }
+
+  Node& Node::operator=(const Node& node) {
+    for (auto child : m_children) {
+      delete child;
+    }
+    m_children.clear();
+    m_parent = nullptr;
+    
+    for (auto child : node.m_children) {
+      auto localNode = new Node(*child);
+      addChild(localNode);
+    }
+
+    m_parent = node.m_parent;
+    if (m_parent) {
+      m_parent->addChild(this);
+    }
+
+    return *this;
   }
   
   void Node::addChild(Node* node) {
@@ -44,6 +77,12 @@ namespace cure2d {
     }
   }
 
-  Node::~Node() {}
+  Node::~Node() {
+    for (auto node : m_children) {
+      delete node;
+    }
+
+    m_children.clear();
+  }
   
 }  // namespace cure2d

@@ -14,11 +14,14 @@ namespace cure2d {
   class Game {
   public:
     Game();
+    Game(const Game& otherGame) = delete;
+    Game& operator=(const Game& otherGame) = delete;
     void run();
     virtual ~Game();
-    void setMainNode(Node* node);
-    
+    void setMainNode(Node* node);    
     void setFramesPerSecond(float framePerSecond);
+
+    
   protected:
     virtual void processInput();
     virtual void update(float deltaTime);
